@@ -1,0 +1,50 @@
+Assn 3: basic erlang programming notes
+
+basic given function for taking in input into the console: 
+    get_numData() ->
+        {ok, Num} = io:read("Enter a number: "),
+        io:format("The number you entered is: ~w~n", [Num]).
+
+uses pattern matching by taking in number entered by user and binding it to Num
+
+Erl program 1 (module p1):
+- takes in a num and then:
+	- if input not an int: print "not an integer"
+	- if input < 0: compute abs value of number raised to the 7th power, print this
+	- if input > 0:
+		- if input is a multiple of 7: print out the 5th root of the integer (?)
+		- else: print out the factorial of the integer
+math:pow(X,Y)	# returns a float, X raised to the Y power. factorial defined in class
+
+Erl program 2 (module p2):
+- use the above program to loop endlessly with input until the user inputs 0 
+- use tail recursion to achieve the looping
+
+tail recursion 
+
+
+start module with
+% team: team names 
+
+exp(_,E) when E<0 -> err_neg_exponent ;
+exp(_,0) -> 1;
+exp(B,1) -> B;
+exp(B,E) -> B * exp(B,E-1) .
+
+
+fact(N) when N<0 -> err_neg_val ;
+fact(0) -> 1 ;
+fact(N) -> N * fact(N-1) .
+
+scrapping: 
+get_NumData() ->
+	io:fwrite("The number you have entered is ~w~n", [Num]),
+	io:fwrite("~w~n", [is_integer(Num)]).
+	% call rest of algorithm here
+
+if 
+	N < 0 -> 
+		io:fwrite("You have entered a negative number ~n");
+true -> 
+	io:fwrite("You have entered a positive number ~n");
+end;
