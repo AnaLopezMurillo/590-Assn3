@@ -3,8 +3,6 @@
 
 %% to run program: run "start()." without quotations after compiling
 
-%%io:fwrite("You have entered a positive number. ~n"), %% print out the factorial of the int.
-
 -module(p1).
 -export([fact/1]).
 -export([start/0]).

@@ -19,7 +19,7 @@ start() ->
                     ok;
 				N < 0 -> 
 					%% compute abs val of num to 7th power
-					io:fwrite("~w~n", [math:pow(-N, 7)]),
+					io:fwrite("~w~n", [math:pow(abs(N), 7)]),
                     start();
 				N rem 7 =:= 0 ->
 					%% input is a multiple of 7, print out the 5th root of the int
